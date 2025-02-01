@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SINAIS K-BOT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #4a4e69, #36363A);
+      color: #FAFAFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    #container {
+      background: #FAFAFF;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Seção de Imagens */
+    #image-section {
+      margin-bottom: 20px;
+    }
+
+    #img {
+      width: 100%;
+      height: 200px; /* Altura fixa para a imagem */
+      border-radius: 10px;
+      object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Seção de Sinais */
+    #signals-section {
+      background: #E7E8F4;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #signals-section h1 {
+      font-size: 24px;
+      color: #4a4e69;
+      margin-bottom: 10px;
+    }
+
+    #signals-section p {
+      font-size: 16px;
+      color: #36363A;
+      margin: 10px 0;
+    }
+
+    /* Seção de Botões */
+    #buttons-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    button {
+      background: #B8BCE8;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #36363A;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      flex: 1 1 calc(50% - 20px);
+      max-width: 200px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #9fa4d8;
+    }
+
+    #star {
+      background: #4a4e69;
+      color: #FAFAFF;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
+    }
+
+    #star:hover {
+      background: #36363A;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <!-- Seção de Imagens -->
+    <div id="image-section">
+      <img id="img" src="img2.png" alt="SINAIS K-BOT">
+    </div>
+
+    <!-- Seção de Sinais -->
+    <div id="signals-section">
+      <h1>🔯 SINAIS K-BOT</h1>
+      <p>SINAIS 100% ACERTIVOS</p>
+      <p id="apo">ABAIXO DE 0.00X</p>
+      <p id="sai">SAIR EM 0.00X</p>
+      <p id="prote">PROTEÇÃO 0.00X</p>
+      <p id="hora">SINAL OBTIDO 00:00:00</p>
+      <button id="star" onclick="pause()"><b>GERAR SINAL</b></button>
+    </div>
+
+    <!-- Seção de Botões -->
+    <div id="buttons-section">
+      <button onclick="btn1()"><b>MELHORES CASAS</b></button>
+      <button onclick="btn2()"><b>SUPORTE K-BOT</b></button>
+      <button onclick="btn3()"><b>REPORTAR BUG</b></button>
+      <button onclick="btn4()"><b>MEU PRÓPRIO BOT</b></button>
+    </div>
+  </div>
+
+  <script>
+    function btn1() {
+      window.open("https://comerciomoz.github.io/Site-karger/");
+    }
+    function btn2() {
+      window.open("https://wa.me/258872390673?text=Desejo uma ajuda no bot");
+    }
+    function btn3() {
+      window.open("https://wa.me/258872390673?text=Notei um erro no bot");
+    }
+    function btn4() {
+      window.open("https://wa.me/258872390673?text=Desejo solicitar a criança do meu bot web por 500MT");
+    }
+
+    let apos;
+    let sai;
+    let hora;
+    let minute;
+    let d;
+    let second;
+
+    var image = document.querySelector("#img");
+
+    var imagens = [
+      "img.png",
+      "img2.png",
+      "img4.png"
+    ];
+
+    index = 0;
+
+    function troc() {
+      img.src = imagens[index];
+      index++;
+
+      if (index >= imagens.length) {
+        index = 0;
+      }
+    }
+
+    setInterval(troc, 7000);
+
+    function pause() {
+      let num1 = Math.floor(Math.random() * 8) + 1 + "." + Math.floor(Math.random() * 100);
+      let num3 = Math.floor(Math.random() * 1) + 1 + "." + Math.floor(Math.random() * 100);
+      let num2 = Math.floor(Math.random() * 4) + 1 + "." + Math.floor(Math.random() * 99);
+
+      apos = document.getElementById("apo").textContent = "ABAIXO DE " + num1 + "X✅";
+      prote = document.getElementById("prote").textContent = "PROTEÇÃO " + num3 + "X✅";
+      sai = document.getElementById("sai").textContent = "SAIR EM " + num2 + "X✅";
+      d = new Date();
+      hora = d.getHours();
+      minute = d.getMinutes();
+      second = d.getSeconds();
+      var hora = (hora + ":" + minute + ":" + second);
+
+      document.getElementById("hora").textContent = "SINAL OBTIDO " + hora;
+      var botao = document.getElementById("star");
+
+      var contador = 60;
+
+      botao.disabled = true;
+      botao.textContent = `AGUARDE... ${contador}s`;
+
+      var intervalo = setInterval(function () {
+        contador--;
+        botao.textContent = `AGUARDE... ${contador}S`;
+
+        if (contador <= 0) {
+          clearInterval(intervalo);
+          botao.disabled = false;
+          botao.textContent = "GERAR SINAL";
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+
+</html>
